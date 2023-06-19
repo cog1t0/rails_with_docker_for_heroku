@@ -16,7 +16,7 @@ services:
     volumes:
       - ./tmp/db:/var/lib/postgresql/data
     environment:
-      MYSQL_ROOT_PASSWORD: password
+      POSTGRES_PASSWORD: password
       TZ: "Asia/Tokyo"
     ports:
       - "3306:3306"
