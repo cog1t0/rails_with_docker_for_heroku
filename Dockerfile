@@ -2,8 +2,6 @@ FROM arm64v8/ruby:3.2
 
 ARG RUBYGEMS_VERSION=3.4.14
 
-RUN mkdir /app
-
 WORKDIR /app
 COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
