@@ -1,6 +1,7 @@
 # Build Rails development environment with docker
 
 ```
-# run this command for start develop rails
+# Run this command to start developing rails
+# You need to install dip gem if you didn't
 dip rails new .
 ```
