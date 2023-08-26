@@ -2,6 +2,8 @@ FROM arm64v8/ruby:3.2
 
 ARG RUBYGEMS_VERSION=3.4.14
 
+# データベース用にPostgreSQLをインストール
+RUN apt-get update -qq && apt-get install -y postgresql-client
 WORKDIR /app
 COPY Gemfile /app/Gemfile
 COPY Gemfile.lock /app/Gemfile.lock
