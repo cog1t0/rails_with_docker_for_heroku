@@ -5,7 +5,7 @@
 
 ### Create new project
 ```
-dip rails new . --force --no-deps --database=postgresql
+dip rails new . --force --database=postgresql
 docker compose build app --no-cache	
 ```
 
@@ -14,7 +14,26 @@ docker compose build app --no-cache
 dip rails db:create
 ```
 
+```database.yml
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  host: db
+  username: postgres
+  password: password
+
+development:
+  <<: *default
+  database: myapp_development
+
+test:
+  <<: *default
+  database: myapp_test
+```
+
 ### Run your server
 ```
 dip rails server
 ```
+
