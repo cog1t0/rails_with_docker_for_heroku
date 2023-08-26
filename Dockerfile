@@ -1,4 +1,4 @@
-FROM arm64v8/ruby:3.2
+FROM ruby:3.2
 
 ARG RUBYGEMS_VERSION=3.4.14
 
