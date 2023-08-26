@@ -14,7 +14,8 @@ docker compose build app --no-cache
 dip rails db:create
 ```
 
-```database.yml
+### change database.yml
+```
 default: &default
   adapter: postgresql
   encoding: unicode
@@ -30,6 +31,10 @@ development:
 test:
   <<: *default
   database: myapp_test
+
+production:
+  <<: *default
+  database: myapp_production
 ```
 
 ### Run your server
