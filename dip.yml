@@ -11,43 +11,43 @@ compose:
 
 interaction:
   shell:
-    description: Open the Bash shell in app's container
-    service: app
+    description: Open the Bash shell in web's container
+    service: web
     command: bash
     compose:
       run_options: [no-deps]
 
   bundle:
     description: Run Bundler commands
-    service: app
+    service: web
     command: bundle
 
   rake:
     description: Run Rake commands
-    service: app
+    service: web
     command: bundle exec rake
 
   rspec:
     description: Run Rspec commands
-    service: app
+    service: web
     environment:
       RAILS_ENV: test
     command: bundle exec rspec
 
   rails:
     description: Run Rails commands
-    service: app
+    service: web
     command: bundle exec rails
     subcommands:
       s:
         description: Run Rails server at http://localhost:3000
-        service: app
+        service: web
         compose:
           run_options: [service-ports, use-aliases]
 
   setup_key:
     description: Copy key
-    service: app
+    service: web
     command: cp `pwd`/config/key.pem /root/keys/
     shell: false # you can disable shell interpolations on the host machine and send the command as is
 
