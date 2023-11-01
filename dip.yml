@@ -55,6 +55,10 @@ interaction:
     description: Delete cache files on the host machine
     command: rm -rf $(pwd)/tmp/cache/*
 
+  deploy:
+  　　　　description: Deploy to Heroku
+    command: heroku container:login && heroku container:push web -a myapp && heroku container:release web -a myapp && heroku run rake db:migrate -a myapp
+
 provision:
   - dip compose down --volumes
   - dip clean_cache
