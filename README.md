@@ -11,7 +11,7 @@ herokuのアカウント作成、設定等の準備（無料版無くなって�
 ### プロジェクトの新規作成
 ```
 dip rails new . --force --database=postgresql
-docker compose build app --no-cache	
+docker compose build web --no-cache	
 ```
 
 ### DB作成
