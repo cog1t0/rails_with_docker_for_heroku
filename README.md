@@ -69,9 +69,13 @@ git push heroku main
 
 ### DB設定
 ```
-heroku addons:create heroku-postgresql:mini -a nri2023
+heroku addons:create heroku-postgresql:mini -a myapp
 ```
 
+### 環境変数の設定
+```
+heroku config:set RAILS_ENV=production -a myapp
+```
 
 ## herokuにデプロイ
 [手順](https://devcenter.heroku.com/ja/articles/build-docker-images-heroku-yml)
