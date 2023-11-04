@@ -51,12 +51,20 @@ end
 
 dip shellでコンテナ内に入りコマンドを実行
 ```
-rails generate controller Home index
+rails generate controller Home
+```
+
+```ruby:home_controller.rb
+class HomeController < ApplicationController
+  def index
+    render plain: 'Hello World!'
+  end
+end
 ```
 
 ### サーバー起動
 ```
-dip rails server
+docker-compose up
 ```
 
 ## heroku
@@ -64,7 +72,6 @@ dip rails server
 ```
 heroku login
 heroku create myapp
-git push heroku main
 ```
 
 ### DB設定
