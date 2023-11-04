@@ -47,6 +47,11 @@ production:
 dip rails server
 ```
 
+## heroku
+heroku login
+heroku create myapp
+git push heroku main
+
 ## herokuにデプロイ
 [手順](https://devcenter.heroku.com/ja/articles/build-docker-images-heroku-yml)
 
