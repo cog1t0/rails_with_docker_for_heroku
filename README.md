@@ -14,9 +14,10 @@ dip rails new . --force --database=postgresql
 docker compose build web --no-cache
 ```
 
-### DB作成
+### DB
 ```
 dip rails db:create
+dip rails db:migrate
 ```
 
 ### database.ymlの書き換え
@@ -42,6 +43,13 @@ production:
   database: myapp_production
 ```
 
+### サーバー起動
+```
+docker-compose up
+```
+
+# 以降はデプロイ用
+
 ### ルートに表示するページを仮で用意
 ```ruby:route.rb
 Rails.application.routes.draw do
@@ -60,11 +68,6 @@ class HomeController < ApplicationController
     render plain: 'Hello World!'
   end
 end
-```
-
-### サーバー起動
-```
-docker-compose up
 ```
 
 ## heroku
