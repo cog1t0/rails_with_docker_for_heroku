@@ -86,35 +86,41 @@ heroku config:set RAILS_ENV=production -a myapp
 
 ## herokuにデプロイ
 [手順](https://devcenter.heroku.com/ja/articles/build-docker-images-heroku-yml)
+参考記事：https://zenn.dev/takuty/articles/b7aa6164fc85bb
 
 # herokuよく使うコマンド
 ## deploy
+
 ```
 heroku container:push web -a myapp && heroku container:release web -a myapp
 ```
+
 をdipコマンドにしました
+
 ```
 dip deploy
 ```
 
 ## コマンド実行
+
 ```
 heroku run bash
 ```
 
 ## check log
+
 ```
 heroku logs --tail
 ```
-* ...
-
 
 ## access db
+
 ```
  heroku pg:psql
 ```
 
 ## reset db
+
 ```
 heroku pg:reset -a myapp
 heroku run rails db:migrate
