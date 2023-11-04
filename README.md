@@ -11,7 +11,7 @@ herokuのアカウント作成、設定等の準備（無料版無くなって�
 ### プロジェクトの新規作成
 ```
 dip rails new . --force --database=postgresql
-docker compose build web --no-cache	
+docker compose build web --no-cache
 ```
 
 ### DB作成
@@ -42,6 +42,18 @@ production:
   database: myapp_production
 ```
 
+### ルートに表示するページを仮で用意
+```ruby:route.rb
+Rails.application.routes.draw do
+  root "home#index"
+end
+```
+
+dip shellでコンテナ内に入りコマンドを実行
+```
+rails generate controller Home index
+```
+
 ### サーバー起動
 ```
 dip rails server
@@ -54,6 +66,12 @@ heroku login
 heroku create myapp
 git push heroku main
 ```
+
+### DB設定
+```
+heroku addons:create heroku-postgresql:mini -a nri2023
+```
+
 
 ## herokuにデプロイ
 [手順](https://devcenter.heroku.com/ja/articles/build-docker-images-heroku-yml)
